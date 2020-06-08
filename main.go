@@ -8,13 +8,11 @@ import (
 )
 
 func main() {
-	actual := jason.Lex(`{"foo": "bar", "baz": "beans", "sexy": ["anal", "ass", "tits"]}`)
+	actual := jason.Lex(`{"foo": "bar", "baz": "beans", "bears": ["grizzly", "brown", "polar"]}`)
 	fmt.Println("lexed: ", actual)
 
-	litter.Dump(actual)
+	out, _ := jason.Parse(actual)
 
-	out, out2 := jason.Parse(actual)
-
+	fmt.Println("parsed:")
 	litter.Dump(out)
-	litter.Dump(out2)
 }
